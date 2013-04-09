@@ -1,4 +1,7 @@
 RailsApplication1::Application.routes.draw do
+  resources :books
+
+
   resources :fun_comments
 
 
@@ -9,9 +12,6 @@ RailsApplication1::Application.routes.draw do
 
 
   resources :users
-
-
-  resources :books
 
   root :to => 'top_page#index'
   # The priority is based upon order of creation:
