@@ -1,0 +1,24 @@
+@import "compass";
+
+/*values*/
+$main_width: 1024px;
+
+/*mixin*/
+@mixin debug_red {
+  background-color: #FF0000;
+}
+
+/*---------------------------------------------------------------------------------------------------*/
+
+/*clearfix*/
+.cleafix {
+  @include clearfix;
+}
+
+/*div_centering*/
+div.div_centering {
+  width: $main_width;
+  margin: 0 auto;
+  @include debug_red;
+  @include clearfix;
+}
