@@ -2,6 +2,7 @@
   <h1>top_page index</h1>
   <p>あいうえお</p>
   <p><%= link_to 'GoToBook', :controller => 'books', :action => 'index' %></p>
+  <p><%= link_to 'Janken', :controller => 'janken', :action => 'index' %></p>
   <%= form_tag({ :controller => 'books', :action => 'index'}, :method=>"get") do%>
     検索キーワード
     <%= text_field_tag "search_keyword", "検索キーワード", { size: 40} %>

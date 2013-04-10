@@ -1,0 +1,2 @@
+module JankenHelper
+end

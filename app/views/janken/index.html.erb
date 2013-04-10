@@ -1,0 +1,12 @@
+<%
+@document_title = 'ゲーム開始'
+hand_names = %w(red green blue)
+alt_texts = %w(グー チョキ パー)
+%>
+
+<p>あなたの手を選んでください。</p>
+<div>
+<% 0.upto(2) do |index| %>
+<%= link_to(image_tag(hand_names[index] + '.png', :size => '200x200', :alt => alt_texts[index]), :action => 'result', :hand => index) %>
+<% end %>
+</div>

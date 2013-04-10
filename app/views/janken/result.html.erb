@@ -1,0 +1,29 @@
+<%
+@document_title = 'ゲーム結果'
+hand_names = %w(red green blue)
+alt_texts = %w(グー チョキ パー)
+%>
+<p>あなたの手は…</p>
+<div>
+  <%= image_tag(hand_names[@player_hand] + '.png', :size => '200x200', :alt => alt_texts[@player_hand]) %>
+</div>
+<p>コンピュータの手は…</p>
+<div>
+  <%= image_tag(hand_names[@computer_hand] + '.png', :size => '200x200', :alt => alt_texts[@computer_hand]) %>
+</div>
+<p>
+  <%=
+  case @result
+  when 'even'
+    'あいこです。'
+  when 'win'
+    'あなたの勝ちです。'
+  when 'lose'
+    'コンピュータの勝ちです。'
+  end
+%>
+</p>
+<p>
+  <%= link_to 'トップページへ', root_path %>
+  <%= link_to 'もう一度', :action => 'index' %>
+</p>
