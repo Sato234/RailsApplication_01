@@ -11,7 +11,7 @@ class BooksController < ApplicationController
     end
 
     #@books = Book.where(:publish => params[:search_keyword])
-    @books = Book.where("publish LIKE ?", "%#{params[:search_keyword]}%")
+    @books = Book.where("publish LIKE ?", "%#{params[:search_keyword]}%").paginate(:page => params[:page], :per_page => 3).order('price ASC')
     #@books = execute("SELECT * FROM books WHERE publish like %#{params[:search_keyword]}%;")
 
     respond_to do |format|
