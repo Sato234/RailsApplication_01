@@ -1,3 +1,5 @@
+# coding: utf-8
+
 class BooksController < ApplicationController
   # GET /books
   # GET /books.json
