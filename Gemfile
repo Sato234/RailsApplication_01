@@ -22,6 +22,7 @@ group :assets do
   gem 'execjs'
   gem 'therubyracer'
   gem 'compass-rails'
+  gem 'will_paginate'
 end
 
 gem 'jquery-rails'

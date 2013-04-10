@@ -7,7 +7,7 @@ class BooksController < ApplicationController
     #@books = Book.find(2,5,10)
     
     if params[:search_keyword].to_s.empty?
-      
+      #Allman
     end
 
     #@books = Book.where(:publish => params[:search_keyword])
