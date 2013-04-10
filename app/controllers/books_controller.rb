@@ -2,9 +2,17 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    #@books = Book.all
     #
     #@books = Book.find(2,5,10)
+    
+    if params[:search_keyword].to_s.empty?
+      
+    end
+
+    #@books = Book.where(:publish => params[:search_keyword])
+    @books = Book.where("publish LIKE ?", "%#{params[:search_keyword]}%")
+    #@books = execute("SELECT * FROM books WHERE publish like %#{params[:search_keyword]}%;")
 
     respond_to do |format|
       format.html # index.html.erb

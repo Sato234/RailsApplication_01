@@ -6,3 +6,6 @@ RailsApplication1::Application.initialize!
 
 # MyLibs
 require 'module/common'
+
+#OtherLibs
+require 'will_paginate'
