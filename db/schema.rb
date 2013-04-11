@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130408092804) do
+ActiveRecord::Schema.define(:version => 20130411065233) do
 
   create_table "authors", :force => true do |t|
     t.integer  "user_id"
@@ -54,6 +54,16 @@ ActiveRecord::Schema.define(:version => 20130408092804) do
     t.boolean  "deleted"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "imageuploads", :force => true do |t|
+    t.string   "description"
+    t.string   "uploadedimage_file_name"
+    t.string   "uploadedimage_content_type"
+    t.integer  "uploadedimage_file_size"
+    t.datetime "uploadedimage_updated_at"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "reviews", :force => true do |t|

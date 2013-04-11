@@ -1,4 +1,7 @@
 RailsApplication1::Application.routes.draw do
+  resources :imageuploads
+
+
   get "janken/index"
   get "janken/result"
   match "janken", :to => "janken#index"

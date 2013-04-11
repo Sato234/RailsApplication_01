@@ -1,0 +1,23 @@
+<h1>Listing Images</h1>
+
+
+<table>
+  <% @imageuploads.each do |imageupload| %>
+    <tr>
+      <%#logger.error "FFFF" if imageupload.uploadedimage.exists?%>
+      <td><%= imageupload.description %></td>
+      <td><%= image_tag imageupload.uploadedimage.url %></td>
+      <td><%= image_tag imageupload.uploadedimage.url(:medium) %></td>
+      <td><%= image_tag imageupload.uploadedimage.url(:thumb) %></td>
+      <td><%= link_to 'Edit', imageupload, :action => 'edit' %></td>
+      <td><%= link_to 'Destroy', imageupload, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<br />
+
+<%= link_to 'Upload Image', new_imageupload_path %>
+<%= link_to 'トップページへ', root_path %>
+<%= will_paginate @imageuploads %>

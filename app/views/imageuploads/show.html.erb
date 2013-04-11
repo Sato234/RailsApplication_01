@@ -1,0 +1,16 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Description:</b>
+  <%= @imageupload.description %>
+</p>
+
+<p>
+  <%# logger.error @imageupload.uploadedimage.url %>
+  <%= image_tag @imageupload.uploadedimage.url %>
+  <%= image_tag @imageupload.uploadedimage.url(:medium) %>
+  <%= image_tag @imageupload.uploadedimage.url(:thumb) %>
+</p>
+
+
+<%= link_to 'Image Uploader Top', :action => 'index' %>
