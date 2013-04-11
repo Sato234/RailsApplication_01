@@ -23,6 +23,7 @@ group :assets do
   gem 'therubyracer'
   gem 'compass-rails'
   gem 'will_paginate'
+  gem 'paperclip'
 end
 
 gem 'jquery-rails'

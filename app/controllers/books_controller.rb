@@ -6,14 +6,19 @@ class BooksController < ApplicationController
     #
     #@books = Book.find(2,5,10)
     
-    if params[:search_keyword].to_s.empty?
-      #Allman
-    end
+#    if params[:search_keyword].to_s.empty?
+#      #@books = Book.new
+#    else
+#      @books = Book.where("publish ILIKE  ? OR title ILIKE  ?", "%#{params[:search_keyword]}%", "%#{params[:search_keyword]}%").paginate(:page => params[:page], :per_page => 3).order('price ASC')
+#    end
 
     #@books = Book.where(:publish => params[:search_keyword])
-    @books = Book.where("publish LIKE ?", "%#{params[:search_keyword]}%").paginate(:page => params[:page], :per_page => 3).order('price ASC')
     #@books = execute("SELECT * FROM books WHERE publish like %#{params[:search_keyword]}%;")
-
+    @books = Book.where("publish ILIKE  ? OR title ILIKE  ?", "%#{params[:search_keyword]}%", "%#{params[:search_keyword]}%").paginate(:page => params[:page], :per_page => 3).order('price ASC')
+   
+    #logger.error @books.size
+    
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @books }
