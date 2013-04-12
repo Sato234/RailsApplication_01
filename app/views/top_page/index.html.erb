@@ -3,9 +3,13 @@
   <p>あいうえお</p>
   <p><%= link_to 'GoToBook', :controller => 'books', :action => 'index' %></p>
   <p><%= link_to 'Janken', :controller => 'janken', :action => 'index' %></p>
+  <p><%= link_to 'Imageupload', :controller => 'imageuploads', :action => 'index' %></p>
   <%= form_tag({ :controller => 'books', :action => 'index'}, :method=>"get") do%>
     検索キーワード
     <%= text_field_tag "search_keyword", "検索キーワード", { size: 40} %>
     <%= submit_tag "検索開始" %>
   <% end %>
+  <div class ="canvas leftright_padding">
+    AAAAA
+  </div>
 </div>
