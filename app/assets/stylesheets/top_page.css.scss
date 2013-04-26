@@ -9,3 +9,36 @@ div.canvas {
   height: 400px;
   background-color: silver;
 }
+
+p#first {
+  color: #0000FF;
+}
+
+#slides {
+  display: none;
+}
+
+#slides.prev {
+position:absolute;
+top:107px;
+left:-39px;
+width:24px;
+height:43px;
+display:block;
+z-index:101;
+}
+
+#slides.next {
+position:absolute;
+top:107px;
+left:315px;
+width:24px;
+height:43px;
+display:block;
+z-index:101;
+}
+
+.play
+{
+ display:none;
+}

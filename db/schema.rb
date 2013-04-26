@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130411065233) do
+ActiveRecord::Schema.define(:version => 20130426070148) do
 
   create_table "authors", :force => true do |t|
     t.integer  "user_id"
@@ -47,6 +47,16 @@ ActiveRecord::Schema.define(:version => 20130411065233) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "comments", :force => true do |t|
+    t.string   "commenter"
+    t.text     "body"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comments", ["post_id"], :name => "index_comments_on_post_id"
+
   create_table "fun_comments", :force => true do |t|
     t.integer  "author_no"
     t.string   "name"
@@ -64,6 +74,13 @@ ActiveRecord::Schema.define(:version => 20130411065233) do
     t.datetime "uploadedimage_updated_at"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "reviews", :force => true do |t|

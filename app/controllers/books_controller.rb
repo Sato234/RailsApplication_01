@@ -14,6 +14,8 @@ class BooksController < ApplicationController
 
     #@books = Book.where(:publish => params[:search_keyword])
     #@books = execute("SELECT * FROM books WHERE publish like %#{params[:search_keyword]}%;")
+    
+    #ILIKEはLIKEの小文字大文字無視版
     @books = Book.where("publish ILIKE  ? OR title ILIKE  ?", "%#{params[:search_keyword]}%", "%#{params[:search_keyword]}%").paginate(:page => params[:page], :per_page => 3).order('price ASC')
    
     #logger.error @books.size
@@ -40,6 +42,7 @@ class BooksController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
+    @publishes = Book.select('DISTINCT publish')
 
     respond_to do |format|
       format.html # new.html.erb
@@ -50,6 +53,7 @@ class BooksController < ApplicationController
   # GET /books/1/edit
   def edit
     @book = Book.find(params[:id])
+    @publishes = Book.select('DISTINCT publish')
   end
 
   # POST /books

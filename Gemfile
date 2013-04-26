@@ -24,6 +24,9 @@ group :assets do
   gem 'compass-rails'
   gem 'will_paginate'
   gem 'paperclip'
+  gem "less-rails"
+  gem "twitter-bootstrap-rails"
+  gem 'compass_twitter_bootstrap'
 end
 
 gem 'jquery-rails'

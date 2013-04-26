@@ -26,3 +26,7 @@ div.div_centering {
   @include debug_red;
   @include clearfix;
 }
+
+.hidden{
+    display: none;
+}
